@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "standard",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "max-len": [
+            2,
+            {
+              "code": 120,
+              "tabWidth": 2,
+              "ignoreUrls": true,
+              "ignorePattern": "^import\\s.*\\s*'.+';$"
+            }
+          ],
+        "omitLastInOneLineBlock": "true",
+        "semi": ["error", "always"],
+        "react/prop-types": 0
+
+    }
+}
