@@ -49,7 +49,7 @@ export default class App extends React.Component {
     const {isAsync, text, items} = this.state;
     return (
       <div>
-        <Tab isAsync={isAsync} onClick={value => this.setState(() => ({isAsync: value, text: ''}))} />
+        <Tab isAsync={isAsync} onClick={value => this.syncUpdate(() => ({isAsync: value, text: ''}))} />
         <h3>Rendering a text input as sync priority</h3>
         <Input value={text} onChange={value => this.syncUpdate(() => ({text: value}))} />
         <h3>Rendering {items.length}items as {isAsync ? 'low' : 'sync'} priority</h3>
