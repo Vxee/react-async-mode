@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -30,6 +31,7 @@ module.exports = {
     open: true, // 自动打开页面
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
+    hot: true,
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -40,5 +42,6 @@ module.exports = {
       filename: path.resolve(__dirname, 'dist/index.html'), // 生成的html文件存放的地址和文件名
       template: path.resolve(__dirname, 'index.html'), // 基于index.html模板进行生成html文件
     }),
+    new webpack.HotModuleReplacementPlugin()
   ],
 };

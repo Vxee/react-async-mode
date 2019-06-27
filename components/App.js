@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {hot} from 'react-hot-loader/root';
 
 import Tab from './Tab';
 import Input from './Input';
 import Items from './Items';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,3 +59,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default hot(App);
